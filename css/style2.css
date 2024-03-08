@@ -1,11 +1,6 @@
 @font-face {
     font-family: Fredoka;
-    src: url(../fonts/FredokaOne-Regular.ttf);
-}
-
-@font-face {
-    font-family: Merri;
-    src: url(../fonts/Merriweather-BoldItalic.ttf);
+    src: url(/fonts/FredokaOne-Regular.ttf);
 }
 
 @font-face {
@@ -13,111 +8,135 @@
     src: url(../fonts/Silkscreen-Regular.ttf);
 }
 
-
 body {
-    position: relative;
-    background-color: rgb(27, 148, 204);
+    background: linear-gradient(to left, #49a7e6, #2C3156);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.tit1 {
-    color: rgba(13, 226, 23, 0.555);
+.img1 {
+    width: 50%;
+    /* Mantém a imagem responsiva */
+    max-width: 500px;
+    height: auto;
+    border: 8px groove rgb(139, 6, 6);
+    border-radius: 3%;
+    box-shadow: 8px 15px 20px 8px #12131d;
+    display: block;
+    margin: 20px auto;
+    /* Ajusta a imagem centralizada com margem */
+}
+
+.tit1,
+.tit2 {
     font-family: Fredoka;
-    position: absolute;
-    font-size: 80px;
-    margin-top: 140px;
-    margin-left: 60px;
-    transition: 0.4s ease;
-    cursor: pointer;
+    /* Removido: position: absolute; */
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    /* Centraliza o texto */
 }
 
 .tit1:hover {
-    color: rgb(40, 233, 49);
+    color: rgb(255, 85, 85);
 }
 
 .tit2 {
-    color: rgba(228, 14, 32, 0.712);
-    font-family: Fredoka;
-    position: absolute;
-    font-size: 60px;
-    margin-top: 200px;
-    margin-left: 280px;
+    color: rgba(151, 137, 8, 0.712);
+    font-size: calc(5vw + 20px);
     transition: 0.4s ease;
     cursor: pointer;
 }
 
 .tit2:hover {
-    color: tomato;
+    color: rgb(250, 246, 24);
 }
 
-.tit3 {
-    color: rgba(223, 202, 20, 0.534);
-    font-family: Fredoka;
-    position: absolute;
-    font-size: 70px;
-    margin-top: 180px;
-    margin-left: 455px;
-    transition: 0.4s ease;
+.tela {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* Assegura que a tela ocupe toda a altura */
+}
+
+.btn {
+
+    border: 2px solid #000;
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 3px;
+    background-color: #444;
+    box-shadow: -3px 4px 0 #222, -5px 7px 0 #000;
+    transition: 0.2s ease;
     cursor: pointer;
 }
 
-.tit3:hover {
-    color: gold;
-}
-
-.img1 {
-    position: absolute;
-    margin-top: 80px;
-    margin-left: 780px;
-    width: 450px;
-    border: 2px solid black;
-    border-radius: 3%;
-    box-shadow: 8px 15px 20px 3px #2C3156;
-}
-
-.rel {
-    font-family: Silk2;
+.link {
+    background-image: linear-gradient(to bottom, rgb(170, 21, 21), rgb(109, 126, 138), rgb(182, 159, 27));
     text-decoration: none;
-    position: absolute;
-    margin-top: 450px;
-    margin-left: 250px;
-    font-size: 60px;
-    color: rgba(170, 15, 170, 0.719);
-    border: 1px solid black;
-    border-radius: 8%;
-    background: linear-gradient(#3443b3, #2C3156);
-    box-shadow: 8px 15px 20px 3px #2C3156;
+    color: rgb(0, 0, 0);
+    font-size: 40px;
+    transition: 0.4s ease;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-.rel:hover {
-    color: rgba(212, 14, 212, 0.945);
+.link:hover {
+    background-image: linear-gradient(to bottom, rgb(255, 37, 37), rgb(221, 232, 240), rgb(255, 220, 22));
+    color: black;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-size: 40px;
+    /* Adicionado: */
+    -webkit-text-fill-color: transparent;
 }
 
-.eu {
-    position: absolute;
-    width: 140px;
-    margin-left: 1150px;
-    margin-top: 420px;
-    border: 2px solid gold;
-    border-radius: 3%;
-    box-shadow: 8px 5px 20px 3px #918814;
+button:active {
+    box-shadow: inset -4px 4px 0 #222;
+    font-size: 0.9rem;
 }
 
-.nome {
-    position: absolute;
-    border: 1px solid black;
-    border-radius: 10px;
-    background-color: black;
-    color: rgb(174, 233, 14);
-    font-family: Merri;
-    font-size: 23px;
-    margin-left: 1130px;
-    margin-top: 590px;
+button:hover {
+    background-color: rgb(89, 98, 104);
 }
 
-.dev {
-    position: absolute;
-    font-family: Merri;
-    font-size: 25px;
-    margin-left: 1050px;
-    margin-top: 470px;
+@media only screen and (max-width: 768px) {
+
+    .tit1,
+    .tit2 {
+        font-family: Fredoka;
+        /* Removido: position: absolute; */
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        /* Centraliza o texto */
+    }
+
+    .btn {
+        width: 60%;
+        /* Ajusta a largura do botão para telas menores */
+        font-size: calc(2.5vw + 8px);
+        /* Ajusta o tamanho da fonte do botão */
+        padding: 12px 0;
+        /* Ajusta o padding para manter a proporção */
+        margin-top: 20px;
+        /* Adiciona espaço acima do botão */
+    }
+
+
+
+    .tela {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        /* Garante que a tela ocupe toda a altura da viewport */
+        width: 100%;
+    }
 }
